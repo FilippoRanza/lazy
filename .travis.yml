@@ -1,0 +1,6 @@
+
+language: minimal
+
+script: bash test_install.sh
+
+dist: bionic
