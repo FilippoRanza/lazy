@@ -5,7 +5,7 @@
 sudo python3 install.py -c 
 
 for script in *zsh; do
-    NAME=$(echo "$script" | perl -pe 's|.+\.(\w+)|$1|')
+    NAME=$(echo "$script" | perl -pe 's|(.+)\.\w+|$1|')
     echo "checking $NAME - $script"
     which "$NAME" || exit 1
 done
