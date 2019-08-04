@@ -5,6 +5,6 @@
 sudo python3 install.py -c 
 
 for script in *zsh; do
-    local NAME=$(echo "$script" | perl -pe 's|.+\.(\w+)|$1|')
+    NAME=$(echo "$script" | perl -pe 's|.+\.(\w+)|$1|')
     which "$NAME" || exit 1
 done
