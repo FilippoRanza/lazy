@@ -2,7 +2,7 @@
 
 # Copyright (c) 2019 Filippo Ranza <filipporanza@gmail.com>
 
-python3 sudo install.py -c 
+sudo python3 install.py -c 
 
 for script in *zsh; do
     local NAME=$(echo "$script" | perl -pe 's|.+\.(\w+)|$1|')
