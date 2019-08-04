@@ -1,5 +1,8 @@
 #! /usr/bin/zsh
 
+# Copyright (c) 2019 Filippo Ranza <filipporanza@gmail.com>
+
+
 function die(){
     echo "$1"
     exit 1

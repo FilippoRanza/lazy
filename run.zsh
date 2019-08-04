@@ -1,5 +1,8 @@
 #! /usr/bin/zsh
 
+# Copyright (c) 2019 Filippo Ranza <filipporanza@gmail.com>
+
+
 set -e
 
 __SETTINGS_FILE__='.run_settings.zsh'
