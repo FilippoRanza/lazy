@@ -92,8 +92,7 @@ function run_html() {
 
 function run_lex() {
     local name="$(get_base_name $1)"
-    local tmp=$(mktemp)
-    flex -o "$tmp" "$1"
+    flex -o "$name.c" "$1"
     gcc -g -Wall -Wpedantic -o "$name" "$tmp"
     shift
     "./$name" "$@"
