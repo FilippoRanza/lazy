@@ -1,6 +1,6 @@
 #! /usr/bin/zsh
 
-# Copyright (c) 2019 Filippo Ranza <filipporanza@gmail.com>
+# Copyright (c) 2019-2020 Filippo Ranza <filipporanza@gmail.com>
 
 
 set -e
@@ -90,6 +90,15 @@ function run_html() {
     python -m webbrowser "$1"
 }
 
+function run_lex() {
+    local name="$(get_base_name $1)"
+    local tmp=$(mktemp)
+    flex -o "$tmp" "$1"
+    gcc -g -Wall -Wpedantic -o "$name" "$tmp"
+    shift
+    "./$name" "$@"
+}
+
 
 [[ "$#@" -eq '0' ]] && exit
 
@@ -118,6 +127,7 @@ typeset -A RUNNERS=(
     'html' 'run_html'
     'hs' 'run_haskell'
     'ex' 'elixir'
+    'lex' 'run_lex'
 )
 EXT=$(echo "$PRG" | perl -pe 's|.+\.(\w+)|$1|')
 
